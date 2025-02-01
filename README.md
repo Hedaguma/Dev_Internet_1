@@ -7,8 +7,8 @@ Este sitio web es para mostrar mis avances en la materia de **Desarrollo Para In
 - **Recursos y herramientas**: 
 
 ## Cómo ver el sitio
-Visita la página del proyecto aquí: [https://github.com/Hedaguma/Dev_Internet_1.git][Desarrollo Para Internet 1]
-
+Visita la página del proyecto aquí: (https://github.com/Hedaguma/Dev_Internet_1.git)  [Desarrollo Para Internet 1]
+    
 
 ## Contribuciones
 Las contribuciones son bienvenidas. Si tienes sugerencias o mejoras, abre un issue o haz un pull request.
