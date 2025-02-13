@@ -1,0 +1,157 @@
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    background: url(/Imagenes/unsplash.jpg) no-repeat center center fixed;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header h1 {
+    display: inline;
+    font-size: 3em; /* Ajusta el tamaño de la fuente del encabezado */
+}
+
+/* Estilo del menú */
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox para alinear los elementos en una sola línea */
+    justify-content: center; /* Centrar los elementos */
+    flex-wrap: wrap; /* Asegura que los elementos se acomoden si no caben */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaciado entre los elementos */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+    padding: 8px 12px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #575757; /* Efecto de hover */
+}
+
+nav ul li ul {
+    display: none; /* Ocultar submenús por defecto */
+    position: absolute; /* Colocar el submenú encima de otros elementos */
+    background-color: #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav ul li:hover ul {
+    display: block; /* Mostrar submenú cuando se pasa el ratón por encima */
+}
+
+nav ul li ul li {
+    width: 200px;
+    margin: 5px 0;
+}
+
+/* Contenido */
+.container {
+    min-height: 80vh; /* Asegura que el contenido ocupe al menos un 80% de la altura de la pantalla */
+    padding-bottom: 50px; /* Esto le da espacio suficiente para el pie de página */
+}
+
+
+
+/* Estilos Responsivos */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5em; /* Reducir tamaño de la fuente en pantallas medianas */
+    }
+
+    nav ul {
+        justify-content: space-evenly; /* Distribuir los elementos de forma más uniforme */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Reducir tamaño de la fuente en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Reducir tamaño de la fuente en pantallas más pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambiar la orientación a columna */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Aumentar espacio entre los elementos */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Reducir tamaño de la fuente en pantallas pequeñas */
+        padding: 10px; /* Aumentar espacio en los botones */
+    }
+
+    footer {
+        padding: 10px; /* Aumentar el padding en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Reducir aún más el tamaño del título en pantallas muy pequeñas */
+    }
+
+    nav ul li a {
+        font-size: 0.9em; /* Ajustar el tamaño de los enlaces */
+        padding: 12px 15px; /* Aumentar el área de clic en dispositivos móviles */
+    }
+
+    footer {
+        padding: 15px; /* Asegurarse de que el pie de página tenga suficiente espacio */
+    }
+}
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+body {
+    padding-bottom: 50px; /* Asegura que el contenido no se oculte detrás del pie de página */
+}
+
+#gif-container {
+    text-align: center;
+    display: block;
+}
