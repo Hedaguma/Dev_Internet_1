@@ -1,14 +1,13 @@
-# PW
-Programación para Windows
+# DESARROLLO PARA INTERNET 1
 
-Este sitio web es parte del material de apoyo para la materia **Programación para Windows**. Está alojado en GitHub Pages y contiene recursos interactivos, presentaciones y enlaces a herramientas útiles.
+Este sitio web es parte del material de apoyo para la materia **Desarrollo para Internet 1**. Está alojado en GitHub Pages y contiene recursos interactivos, presentaciones y enlaces a herramientas útiles.
 
 ## Contenido
 - **Presentación del curso**: Una introducción embebida para los estudiantes.
 - **Recursos y herramientas**: Listado de recursos recomendados para aprender programación para windows.
 
 ## Cómo ver el sitio
-Visita la página del proyecto aquí: [Programación para Windows](https://github.com/Hedaguma/Dev_Internet_1.git)
+Visita la página del proyecto aquí: [Desarrollo para Internet 1](Dev_Internet_1/rsc/index.html)
 
 ## Tecnologías utilizadas
 - **HTML5** para la estructura del sitio.
