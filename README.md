@@ -7,7 +7,7 @@ Este sitio web es parte del material de apoyo para la materia **Desarrollo para 
 - **Recursos y herramientas**: Listado de recursos recomendados para aprender programación para windows.
 
 ## Cómo ver el sitio
-Visita la página del proyecto aquí: [Desarrollo para Internet 1](Dev_Internet_1/rsc/index.html)
+Visita la página del proyecto aquí: [Desarrollo para Internet 1](https://github.com/Hedaguma/Dev_Internet_1.git)
 
 ## Tecnologías utilizadas
 - **HTML5** para la estructura del sitio.
