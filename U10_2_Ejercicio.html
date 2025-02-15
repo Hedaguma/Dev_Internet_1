@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Validador de teléfono</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const validateButton = document.getElementById('validateButton');
+            validateButton.addEventListener('click', function(event) {
+                event.preventDefault();  // Evita que el formulario se envíe al hacer clic en el botón
+                validatePhoneNumber();
+            });
+        });
+
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById('phone');
+            const phoneFeedback = document.getElementById('phoneFeedback');
+            const phone = phoneInput.value;
+            const phonePattern = /^\d{10}$/; // Solo 10 dígitos
+
+            if (phonePattern.test(phone)) {
+                phoneInput.style.borderColor = 'green';
+                phoneFeedback.textContent = 'Teléfono válido';
+                phoneFeedback.style.color = 'green';
+            } else {
+                phoneInput.style.borderColor = 'red';
+                phoneFeedback.textContent = 'Teléfono inválido';
+                phoneFeedback.style.color = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="phoneForm">
+        <label for="phone">Número de Teléfono:</label>
+        <input type="text" id="phone" name="phone" required>
+        <button type="button" id="validateButton">Validar</button>
+        <p id="phoneFeedback"></p>
+    </form>
+</body>
+</html>

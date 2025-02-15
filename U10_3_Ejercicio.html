@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Contador de palabras</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const validateButton = document.getElementById('validateButton');
+            validateButton.addEventListener('click', function(event) {
+                event.preventDefault();  // Evita que el formulario se envíe al hacer clic en el botón
+                countWordOccurrences();
+            });
+        });
+
+        function countWordOccurrences() {
+            const phraseInput = document.getElementById('phrase');
+            const wordInput = document.getElementById('word');
+            const resultFeedback = document.getElementById('resultFeedback');
+            const phrase = phraseInput.value;
+            const word = wordInput.value;
+            
+            // Convertir la frase y la palabra a minúsculas para evitar problemas de mayúsculas/minúsculas
+            const phraseLower = phrase.toLowerCase();
+            const wordLower = word.toLowerCase();
+            
+            // Dividir la frase en palabras
+            const words = phraseLower.split(/\s+/);
+            // Contar las ocurrencias de la palabra
+            let count = 0;
+            words.forEach(currentWord => {
+                if (currentWord === wordLower) {
+                    count++;
+                }
+            });
+            
+            resultFeedback.value = `La palabra "${word}" se repite ${count} veces en la frase.`;
+        }
+    </script>
+</head>
+<body>
+    <form id="wordCountForm">
+        <div style="margin-bottom: 15px;">
+            <label for="phrase">Ingresa una frase:</label>
+            <textarea id="phrase" name="phrase" required rows="2" style="width: 600px; height: 12px;"></textarea>
+        </div>
+        <div style="margin-bottom: 15px; display: flex; align-items: center;">
+            <label for="word">Palabra a buscar:</label>
+            <input type="text" id="word" name="word" required style="width: 200px; margin-right: 10px;">
+            <button type="button" id="validateButton">Contar ocurrencias</button>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="resultFeedback">Resultado:</label>
+            <input type="text" id="resultFeedback" name="resultFeedback" readonly style="width: 300px;">
+        </div>
+    </form>
+</body>
+</html>

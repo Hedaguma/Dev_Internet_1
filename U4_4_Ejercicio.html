@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Backpacks S.A. de C.V.">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <div id="menu-contenedor"></div>
+    <script src="menu.js" defer></script>
+    <title>Formulario de Cotizaciones - Backpacks S.A. de C.V.</title>
+</head>
+<body>
+    <h1>Formulario de Cotizaciones</h1>
+    <form id="cotizacionForm" onsubmit="submitForm(event)">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+
+        <label for="detalles">Detalles del Producto/Servicio:</label><br>
+        <textarea id="detalles" name="detalles" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

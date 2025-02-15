@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cubitos S.A. de C.V.">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>
+    <title>Cubitos S.A. de C.V.</title>
+</head>
+<body>
+    <form id="registrationForm" onsubmit="submitForm(event)">
+        <label for="username">Nombre de Usuario:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="birthdate">Fecha de Nacimiento:</label><br>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+        <input type="submit" value="Registrar">
+    </form>
+
+</html>

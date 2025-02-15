@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Validador de coincidencia de contraseña</title>
+    <script type="text/javascript">
+        function validarContrasenas(event) {
+            event.preventDefault();
+            var contrasena1 = document.getElementById("contrasena1").value;
+            var contrasena2 = document.getElementById("contrasena2").value;
+            var mensaje = document.getElementById("mensaje");
+
+            if (contrasena1 === "" || contrasena2 === "") {
+                mensaje.textContent = "Las contraseñas no pueden estar vacías.";
+                mensaje.style.color = "red";
+                return false;
+            }
+            
+            if (contrasena1 !== contrasena2) {
+                mensaje.textContent = "Las contraseñas no coinciden.";
+                mensaje.style.color = "red";
+                return false;
+            }
+            mensaje.textContent = "Las contraseñas coinciden.";
+            mensaje.style.color = "green";
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Registro</h2>
+    <form onsubmit="return validarContrasenas(event)">
+        <label for="contrasena1">Contraseña:</label>
+        <input type="password" id="contrasena1" name="contrasena1"><br><br>
+        <label for="contrasena2">Confirmar Contraseña:</label>
+        <input type="password" id="contrasena2" name="contrasena2"><br><br>
+        <input type="submit" value="Registrar">
+    </form>
+    <p id="mensaje"></p>
+</body>
+</html>

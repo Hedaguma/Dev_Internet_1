@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Validador de edad</title>
+    <script type="text/javascript">
+        function calcularEdad(fecha) {
+            var hoy = new Date();
+            var fechaNacimiento = new Date(fecha);
+            var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            var mes = hoy.getMonth() - fechaNacimiento.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        function validarEdad(event) {
+            event.preventDefault();  // Evitar que el formulario se recargue
+            var fecha = document.getElementById("fechaNacimiento").value;
+            var mensaje = document.getElementById("mensaje");
+            var edad = calcularEdad(fecha);
+
+            if (edad < 18) {
+                mensaje.textContent = "Debes ser mayor de edad para continuar. Tu edad es: " + edad + " años.";
+                mensaje.style.color = "red";
+                return false;
+            }
+            mensaje.textContent = "Eres mayor de edad. Tu edad es: " + edad + " años.";
+            mensaje.style.color = "green";
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Validación de Mayoría de Edad</h2>
+    <form id="formulario" onsubmit="validarEdad(event)">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+        <input type="submit" value="Validar">
+    </form>
+    <p id="mensaje"></p>
+</body>
+</html>

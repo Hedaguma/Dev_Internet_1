@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rubrick S.A. de C.V.">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>
+    <title>Rubrick S.A. de C.V.</title>
+</head>
+<body>
+    <h1>Encuesta de Maquetación Artesanal</h1>
+    <form id="messageSentForm" onsubmit="submitForm(event)">
+        <label for="interes">¿Cuál es su interés en la maquetación artesanal?</label><br>
+        <textarea id="interes" name="interes" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="opinion">¿Cuál es su opinión sobre la maquetación artesanal?</label><br>
+        <textarea id="opinion" name="opinion" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="experiencia">¿Cuál es su experiencia en la maquetación artesanal?</label><br>
+        <textarea id="experiencia" name="experiencia" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

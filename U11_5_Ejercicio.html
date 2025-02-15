@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Validador de checkbox</title>
+    <script type="text/javascript">
+        function validarCheckboxes(event) {
+    event.preventDefault();  // Evitar que el formulario se recargue
+    var checkboxes = document.getElementsByName("opciones");
+    var mensaje = document.getElementById("mensaje");
+    var alMenosUnoSeleccionado = false;
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            alMenosUnoSeleccionado = true;
+            break;
+        }
+    }
+
+    if (!alMenosUnoSeleccionado) {
+        mensaje.textContent = "Debes seleccionar al menos una opción.";
+        mensaje.style.color = "red";
+        return false;
+    }
+    mensaje.textContent = "La validación ha sido exitosa.";
+    mensaje.style.color = "green";
+    return true;
+}
+    </script>
+</head>
+<body>
+    <h2>Selecciona al menos una opción</h2>
+    <form onsubmit="return validarCheckboxes(event)">
+        <input type="checkbox" name="opciones" value="opcion1"> Opción 1<br>
+        <input type="checkbox" name="opciones" value="opcion2"> Opción 2<br>
+        <input type="checkbox" name="opciones" value="opcion3"> Opción 3<br>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <p id="mensaje"></p>
+</body>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Validador de formato de correo</title>
+    <script type="text/javascript">
+        function validarEmail() {
+            var email = document.getElementById("email").value;
+            var mensaje = document.getElementById("mensaje");
+            var patronEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!patronEmail.test(email)) {
+                mensaje.textContent = "Por favor, introduce un correo electrónico válido.";
+                mensaje.style.color = "red";
+                return false;
+            }
+            mensaje.textContent = "El correo electrónico es válido.";
+            mensaje.style.color = "green";
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Contacto</h2>
+    <form onsubmit="return validarEmail()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        <label for="email">Correo Electrónico:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <p id="mensaje"></p>
+</body>
+</html>

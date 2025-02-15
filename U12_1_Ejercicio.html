@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Animación de movimiento</title>
+
+    <style>
+        #objeto {
+            width: 100px;
+            height: 100px;
+            background-color: lightseagreen;
+            border-radius: 50%;
+            background-size: cover;
+            position: sticky;
+            top: 100px;
+            left: 100px;
+        }
+        .control-panel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .button {
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        function moverObjeto(direccion) {
+            var objeto = document.getElementById("objeto");
+            var left = objeto.offsetLeft;
+            var top = objeto.offsetTop;
+
+            switch (direccion) {
+                case "arriba":
+                    objeto.style.top = (top - 30) + "px";
+                    break;
+                case "abajo":
+                    objeto.style.top = (top + 30) + "px";
+                    break;
+                case "izquierda":
+                    objeto.style.left = (left - 30) + "px";
+                    break;
+                case "derecha":
+                    objeto.style.left = (left + 30) + "px";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Animación de Logotipo</h2>
+    <div id="objeto"></div>
+    <div class="control-panel">
+        <div class="row">
+            <button class="button" onclick="moverObjeto('arriba')">Arriba</button>
+        </div>
+        <div class="row">
+            <button class="button" onclick="moverObjeto('izquierda')">Izquierda</button>
+            <button class="button" onclick="moverObjeto('derecha')">Derecha</button>
+        </div>
+        <div class="row">
+            <button class="button" onclick="moverObjeto('abajo')">Abajo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Validador de contraseña</title>
+<script>
+        function validarContraseña() {
+            const contraseña = document.getElementById("contraseña").value;
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+            const mensaje = document.getElementById("mensaje");
+
+            if (regex.test(contraseña)) {
+                mensaje.textContent = "La contraseña es válida.";
+                mensaje.style.color = "green";
+            } else {
+                mensaje.textContent = "La contraseña no es válida. Debe contener al menos una letra minúscula, una letra mayúscula y un número.";
+                mensaje.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Validador de Contraseña</h2>
+    <form onsubmit="event.preventDefault(); validarContraseña();">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" required>
+        <button type="submit">Validar</button>
+    </form>
+    <p id="mensaje"></p>
+</body>
+</html>

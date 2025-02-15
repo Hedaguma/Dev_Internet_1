@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>  
+    <title>Animación de cambio de color</title>
+    <style>
+        #animar {
+            width: 200px;
+            height: 100px;
+            background-color: #20B2AA;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 2s ease, color 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="animar">Soy un texto</div>
+    <button onclick="cambiarColor()">Cambiar Color</button>
+
+    <script>
+        function cambiarColor() {
+            const elemento = document.getElementById('animar');
+            const coloresDeFondo = ['#007bff', '#28a745', '#dc3545', '#ffc107', '#17a2b8'];
+            const coloresDeTexto = ['#ffffff', '#000000', '#ffffff', '#000000', '#ffffff'];
+            let nuevoIndice = Math.floor(Math.random() * coloresDeFondo.length);
+            elemento.style.backgroundColor = coloresDeFondo[nuevoIndice];
+            elemento.style.color = coloresDeTexto[nuevoIndice];
+        }
+    </script>
+</body>
+</html>

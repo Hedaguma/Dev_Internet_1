@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Finder S.A. de C.V.">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <div id="menu-contenedor"></div>
+    <script src="menu.js" defer></script>
+    <title>Finder S.A. de C.V.</title>
+</head>
+<body>
+    <h1>Formulario de Búsqueda</h1>
+    <form id="searchForm" onsubmit="submitForm(event)">
+        <label for="query">Buscar:</label><br>
+        <input type="text" id="query" name="query" required><br><br>
+        <input type="submit" value="Buscar">
+    </form>
+</body>
+</html>
