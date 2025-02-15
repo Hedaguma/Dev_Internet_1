@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hector Daniel Guzman Magaña">
+    <link rel="icon" href="Iudy-Logotipo.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <div id="menu-contenedor"></div>
+    <title>Roperitos S.A. de C.V.</title>
+    <style>
+        #marco-menu {
+            background-color: lightseagreen;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #marco-menu a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        #marco-menu a:hover {
+            text-decoration: underline;
+        }
+        #marco-contenido {
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function cargarContenido(pagina) {
+            const contenido = document.getElementById('marco-contenido');
+            fetch(pagina)
+                .then(response => response.text())
+                .then(data => {
+                    contenido.innerHTML = data;
+                });
+        }
+        window.onload = function() {
+            cargarContenido('inicio.html');
+        };
+    </script>
+</head>
+<body>
+    <!-- Marco superior con el menú de navegación -->
+    <div id="marco-menu">
+        <a href="#" onclick="cargarContenido('inicio.html')">Inicio</a>
+        <a href="#" onclick="cargarContenido('productos.html')">Productos</a>
+        <a href="#" onclick="cargarContenido('contacto.html')">Contacto</a>
+    </div>
+    <!-- Marco inferior para el contenido principal -->
+    <div id="marco-contenido">
+        <!-- El contenido se cargará aquí dinámicamente -->
+    </div>
+</body>
+</html>
